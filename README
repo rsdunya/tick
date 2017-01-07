@@ -1,0 +1,60 @@
+Advanced Goods Trade Balance: https://www.census.gov/foreign-trade/advance/current/index.html
+GDP Annualised: http://www.bea.gov/newsreleases/national/gdp/gdpnewsrelease.htm,
+
+######
+Create tables:
+CREATE TABLE `eur_usd` (`instrument` varchar(10) NOT NULL,`bid` decimal(15,10) NOT NULL,`ask` decimal(15,10) NOT NULL,`time` datetime(6) NOT NULL)
+CREATE TABLE `aud_cad` (`instrument` varchar(10) NOT NULL,`bid` decimal(15,10) NOT NULL,`ask` decimal(15,10) NOT NULL,`time` datetime(6) NOT NULL)
+CREATE TABLE `usd_try` (`instrument` varchar(10) NOT NULL,`bid` decimal(15,10) NOT NULL,`ask` decimal(15,10) NOT NULL,`time` datetime(6) NOT NULL)
+CREATE TABLE `news` (`name` varchar(10) NOT NULL,`country` varchar(50) NOT NULL,`previous` decimal(15,10),`forecast` decimal(15,10),`actual` decimal(15,10) NOT NULL,`time` datetime NOT NULL);
+######
+
+###GDP Annualized estmates quarterly since 2013###
+#                      `name`,`country``forecast`,`actual`,`time`);
+insert into news (time, country,name,previous,forecast,actual) values ('2013-04-28','US','GDP',null,null, 1.9)
+,('2013-07-29','US','GDP',null,null, 1.1)
+,('2013-10-28','US','GDP',null,null, 3.0)
+,('2014-01-29','US','GDP',null,null, 3.8)
+,('2013-04-28','US','GDP',null,null,-0.9)
+,('2013-07-29','US','GDP',null,null, 4.6)
+,('2013-10-28','US','GDP',null,null, 4.3)
+,('2014-01-29','US','GDP',null,null, 2.1)
+,('2013-04-28','US','GDP',null,null, 0.6)
+,('2013-07-29','US','GDP',null,null, 3.9)
+,('2013-10-28','US','GDP',null,null, 2.0)
+,('2014-01-29','US','GDP',null,null, 1.4);
+
+
+###Advanced Goods trade balance 2015-2016###
+insert into news (time, country,name,previous,forecast,actual) values ('2016-06-27 08:30','US','AdvGoodsTB',-57.5,-60.7,-60.6),
+('2016-05-25 08:30','US','AdvGoodsTB',-57.1,-61.3,-57.5),
+('2016-04-27 08:30','US','AdvGoodsTB',-62.9,-62.2,-56.9),
+('2016-03-28 08:30','US','AdvGoodsTB',-62.2,-64.4,-62.9),
+('2016-02-26 08:30','US','AdvGoodsTB',-61.5,-62,-62.2),
+('2016-01-29 08:30','US','AdvGoodsTB',-60.5,-59.2,-61.5),
+('2015-12-29 08:30','US','AdvGoodsTB',-58.41,-62.4,-60.5),
+('2015-11-24 08:30','US','AdvGoodsTB',-59.15,-60.4,-58.41);
+
+######Consumer Confidence CCI 2015-2016######
+insert into news (time, country,name,previous,forecast,actual) values ('2015-07-28 10:00','US','CCI',99.8,98,90.9),
+('2015-08-25 10:00','US','CCI',91,93.5,101.5),
+('2015-09-29 10:00','US','CCI',101.3,88.5,103),
+('2015-10-27 10:00','US','CCI',102.6,101,97.6),
+('2015-11-24 10:00','US','CCI',99.1,102,90.4),
+('2015-12-29 10:00','US','CCI',92.6,95,96.5),
+('2016-01-26 10:00','US','CCI',96.3,95,98.1),
+('2016-02-23 10:00','US','CCI',97.8,93.6,92.2),
+('2016-03-29 10:00','US','CCI',94.0,94,96.2),
+('2016-04-26 10:00','US','CCI',96.1,92.5,94.2),
+('2016-05-31 10:00','US','CCI',94.7,98,92.6),
+('2016-06-28 10:00','US','CCI',92.4,95.5,98.0);
+
+
+
+
+
+#DATE/TIME,  COUNTRY,EVENT,PREVIOUS,FORECAST,ACTUAL,UNIT
+#insert into news values (''AdvGoodsTB'', 'US', p, f, a, '2014-01-29');
+#insert into news values (''AdvGoodsTB'', 'US', p, f, a, '2014-01-29');
+
+#UNIQUE KEY `id_box_elements` (`id_box_elements`,`id_router`)
